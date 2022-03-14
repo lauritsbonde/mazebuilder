@@ -146,7 +146,9 @@ const Table = () => {
 			</p>
 			<p>
 				Automove speed: <input type="range" min="5" max="1000" step="5" value={speed} onChange={(e) => setSpeed(+e.target.value)} />
-				{speed < 10 ? 'very fast' : speed < 100 ? 'fast' : speed < 250 ? 'medium' : 'slow'}
+				<span style={{ fontSize: '200%' }}>
+					{speed < 20 ? '🚀' : speed < 55 ? '🏎' : speed < 120 ? '🛻' : speed < 250 ? '🚗' : speed < 500 ? '🚌' : speed < 750 ? '🚲' : speed < 900 ? '🏃‍♂️' : '🚶‍♂️'}
+				</span>
 			</p>
 			<table style={{ width: '95vw', height: '60vh', borderCollapse: 'collapse', marginLeft: '2.5vw' }}>
 				<tbody>

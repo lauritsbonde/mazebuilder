@@ -5,7 +5,7 @@ import Row from './Row';
 
 const Table = () => {
 	const [size, setSize] = useState(4);
-	const [startPos, setStartPos] = useState({ x: 0, y: 0 });
+	const [startPos] = useState({ x: 0, y: 0 });
 	const [mbPos, setMbPos] = useState<current>(startPos);
 	const [won, setWon] = useState(false);
 	const [auto, setAuto] = useState(false);

@@ -90,7 +90,7 @@ const Table = () => {
 			}
 		}, speed);
 		return () => clearInterval(interval);
-	}, [auto, speed, path, move]);
+	});
 
 	const backTrack = () => {
 		const oldGrid = grid;

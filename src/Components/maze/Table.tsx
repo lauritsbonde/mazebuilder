@@ -33,15 +33,6 @@ const Table = () => {
 		restart(parseInt(e.target.value));
 	};
 
-	useEffect(() => {
-		let interval = setInterval(() => {
-			if (auto) {
-				move();
-			}
-		}, speed);
-		return () => clearInterval(interval);
-	}, [auto, speed, path]);
-
 	const move = () => {
 		if (won) return;
 		const oldGrid = grid;
@@ -91,6 +82,15 @@ const Table = () => {
 		setMbPos({ x: next.x, y: next.y });
 		setPath([...oldPath]);
 	};
+
+	useEffect(() => {
+		let interval = setInterval(() => {
+			if (auto) {
+				move();
+			}
+		}, speed);
+		return () => clearInterval(interval);
+	}, [auto, speed, path, move]);
 
 	const backTrack = () => {
 		const oldGrid = grid;
